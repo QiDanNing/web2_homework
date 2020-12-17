@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+	    * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+        body{
+            background-color: rgb(245,245,245);
+        }
+        .overall{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .clear:after {
+            content: '';
+            display: block;
+            height: 0;
+            clear: both;
+        }
+        .res{
+        	height: 60px;
+        }
+        .con{
+        	float: right;
+        }
+        .con a{
+        	display: block;
+        	color: rgb(190,160,140);
+        	font-weight: bold;
+        }
+        .form2{
+        	display: inline;
+        }
+        .header {
+            height: 90px;
+        }
+        
+        .logo {
+            float: left;
+        }
+        .nav {
+            float: left;
+            display: inline;
+            margin-top: 35px;
+            margin-left: 100px;
+            width: 660px;
+            height: 30px;
+        }
+        .nav a {
+            color: rgb(0,0,0);
+        }
+        .nav li {
+            float: left;
+            width: 110px;
+            text-align: center;
+            font:normal bold 20px '楷体';
+            padding-bottom: 10px;
+            border-bottom: 2px solid transparent;
+        }
+        .nav a:hover{
+        	color: rgb(190,160,140);
+        }
+        .nav li:hover{
+            border-bottom: 2px solid rgb(190,160,140);
+        }
+        .nav .first{
+        	border-bottom: 2px solid rgb(190,160,140);
+        }
+        .nav .first a{
+        	color: rgb(190,160,140);
+        }
+        .form {
+            display: inline;
+            margin-top: 30px;
+            margin-left: 100px;
+            float: left;
+        }
+        .form * {
+            float: left;
+        }
+        .form .search {
+            width: 160px;
+            height: 20px;
+            border: 1px solid rgb(190,160,140);
+            padding: 5px;
+        }
+        .form .submit {
+            width: 40px;
+            height: 32px;
+            border: 1px solid rgb(190,160,140);
+            background: rgb(190,160,140) url(images2/pic1.png) no-repeat center center;
+            cursor: pointer;
+        }
+
+        .banner{
+            height: 500px;
+            background: url(images2/pic2.png) no-repeat center center;
+            position: relative
+        }
+        .banner1{
+            height: 500px;
+            background: url(images2/img1.png) no-repeat center center;
+            position: relative;
+            display: none;
+        }
+
+        .prev{
+        	position: absolute;
+        	left: 5%;   	
+        	top: 48%;
+        }
+        .next{
+        	position: absolute;
+        	right: 5%;
+        	top: 48%;
+        }
+        .text{
+        	background-color: rgba(0,0,0,0.6);
+        	position: absolute;
+        	top: 15%;
+        	left: 30%;
+        	padding: 20px;
+        }
+        .text p{
+        	color: rgb(255,255,255);
+        	padding-left: 80px;
+        	padding-bottom: 20px;
+        }
+        .content1,.content2,.content3,.content4,.content5{
+        	margin-top: 40px;
+        	font:normal bold 22px '楷体';
+        }
+        .spe1{
+        	color: rgb(160,160,160);
+        }
+        h1{
+        	color: rgb(190,160,140);
+        }
+        .images1 li{
+        	float: left;
+        	width: 300px;
+        	text-align: center;
+        }
+        .p1{
+        	font-size: 20px;
+        	font-weight:bold;
+        }
+        .p2{
+        	font-size: 20px;
+        }
+        .p3{
+        	font-size: 15px;
+        	color: rgb(160,160,160);
+        }
+        .us{
+        	height: 300px;
+        	background: url(images2/pic8.png) no-repeat center center;
+        	position: relative;
+        }
+        .in{
+        	background-color: rgba(0,0,0,0.4);
+        	color: rgb(255,255,255);
+        	position: absolute;
+        	padding: 60px 39px;
+        }
+        .images2 li{
+        	float: left;
+        	width: 400px;
+        	text-align: center;
+        	position: relative;
+        }
+        .images2 li p{
+        	width: 300px;
+        	height: 80px;
+        	line-height: 80px;
+        	margin: 0 auto;
+        	text-align: center;
+        	background-color: rgba(0,0,0,0.4);
+        	color: rgb(255,255,255);
+        	position: absolute;
+        	left: 50px;
+        	top: 260px;
+        }
+        .top li{
+        	float: left;
+        	width: 600px;
+        	text-align: center;
+        }
+        .bottom .one a{
+        	color: rgb(190,160,140);
+        }
+        .bottom a {
+        	color: rgb(0,0,0);
+        	font-size: 18px;
+        	font-weight: bold;
+        }
+        .bottom a:hover{
+        	color: rgb(190,160,140);
+        }
+        .bottom p{
+        	color: rgb(160,160,160);
+        	font-size: 15px;
+        }
+        .bottom li{
+        	margin-top: 30px;
+        	margin-bottom: 30px;
+        }
+        .back{
+        	background-color: rgba(0, 0, 0, 0.2);
+        	height: 50px;
+        }
+        .content5{
+        	margin-top:100px;
+        	margin-bottom: 50px;
+        }
+        .design>li{
+        	float: left;
+        	width: 600px;
+        	text-align: center;
+        }
+        .design h3{
+        	margin-top: 20px;
+        	margin-bottom: 50px;
+        }
+        .design p{
+        	font-size: 18px;
+        	color: rgb(160,160,160);
+        	margin-bottom: 50px;
+        }
+        .brand li{
+        	float: left;
+        	width: 200px;
+        	text-align: center;
+        }
+        .state{
+        	background-color: rgba(0, 0, 0, 0.7);
+        	color: rgb(255,255,255);
+        	height: 380px ;
+        }
+        .all>li{
+        	float: left;
+        	width: 599px;
+        	text-align: center;
+        }
+        .name{
+        	text-align: center;
+        	padding-top: 25px;
+        	padding-bottom: 25px;
+        	border-bottom: 1px solid rgb(160,160,160);
+        	font-size: 40px;
+        }
+        span{
+        	color: rgb(190,160,140);
+        	font-weight: bolder;
+        }
+        .all{
+        	margin-top: 25px;
+        	margin-bottom: 25px;
+        }
+        .left{
+        	border-right: 1px solid rgb(160,160,160);
+        	padding-right: 100px;
+        }
+        .left li{
+        	height: 30px;
+        	line-height: 30px;
+        }
+        .right li{
+        	height: 60px;
+        	line-height: 60px;
+        }
+        .last{
+        	text-align: center;
+        }
+        body{
+            position: relative;
+        }
+        
+        #reg1{
+            display: none;
+            position: fixed;
+            left: 30%;         
+            top: 200px;
+            width: 700px;
+            height: 500px;
+            background: url(images2/pic8.png) no-repeat center center;
+        }
+        .inp{
+            margin-left: 200px;
+            margin-top: 60px;  
+            border-width: 4px;
+            border-color: rgb(190,160,140);         
+        }
+        .inp1{
+            width: 300px;
+            height: 40px;
+        }
+        .inp2{
+            width: 70px;
+            height: 40px;
+            
+        }
+        #no1,#no2{
+            font-size: 25px;
+            color: rgb(190,160,140);
+            margin-left: 200px;
+            height:40px ;
+        }
+        #inp{
+            margin-left: 200px;
+            height: 30px;
+        }
+        #box{
+            position: relative;
+            overflow: hidden;
+            margin-left: 70px;
+            width: 800px;
+            height: 300px;
+            border: 5px solid #000;
+            margin: 0 auto;
+        }
+        #box span{
+            position: absolute;
+            left: 800px;
+            white-space: nowrap;
+            color: #000000;
+            font-size: 50px;
+        }
+        #baidu,#stop{
+            font-size: 15px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="all">
+    	<div class="res overall clear">
+    		<div class="con" id="reg">
+    			<a href="#">注册</a>
+    			<a href="#">快速登录 </a>
+            </div>
+    	</div>
+        
+    	<div class="header overall ">
+    		 <img src="images2/pic.png" alt="logo" class="logo" />
+                <ul class="nav clear">
+                    <li class="first"><a href="#"> 首页 </a></li>
+                    <li><a href="#">业务范围</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">精选案例</a></li>
+                    <li><a href="#">新闻资讯</a></li>
+                    <li><a id="baidu" href="#">跳转百度 </a><a id="stop" href="#"> 停止</a></li>
+                </ul>
+                <form class="form clear">
+                    <input type="text" placeholder="输入关键词" class="search" />
+                    <input type="button" class="submit" />
+                </form>
+    	</div>
+    	<div class="banner" id="banner">
+    		<img src="images2/prev.png" alt="pic" class="prev" />
+    		<img src="images2/next.png" alt="pic" class="next" />
+    		<div class="text">
+    			<img src="images2/pic3.png" alt="pic" class="ban"/>
+    			<p>EXHIBITION DESIGN</p>
+                <p>全心全意为合作伙伴及消费者提供优质的展览服务</p>
+    	   </div>
+    	</div>
+        <div class="banner1" id="banner1">
+            <img src="images2/prev.png" alt="pic" class="prev" />
+            <img src="images2/next.png" alt="pic" class="next" />
+            <div class="text">
+                <img src="images2/pic3.png" alt="pic" class="ban"/>
+                <p>EXHIBITION DESIGN</p>
+                <p>全心全意为合作伙伴及消费者提供优质的展览服务</p>
+           </div>
+        </div>
+    	<div class="content1 overall">
+    		<p>业务范围</p>
+    		<p class="spe1">Scope of business</p>
+    		<h1>———</h1>
+    			<ul class="images1 clear">
+    				<li><img src="images2/pic4.png" alt="pic" />
+    					<div>
+    						<p class="p1">01</p>
+    						<p class="p2">展览展示</p>
+    						<p class="p3">Exhibition</p>
+    						<p class="p3">——————————</p>
+    					</div>
+    				</li>
+    				<li><img src="images2/pic5.png" alt="pic"  />
+    					<div>
+    						<p class="p1">02</p>
+    						<p class="p2">公关活动</p>
+    						<p class="p3">Public relations activities</p>
+    						<p class="p3">————————————————</p>
+    					</div>
+    				</li>
+    				<li><img src="images2/pic6.png" alt="pic" />
+    					<div>
+    						<p class="p1">03</p>
+    						<p class="p2">商业租赁</p>
+    						<p class="p3">Commercial lease</p>
+    						<p class="p3">——————————</p>
+    					</div>
+    				</li>
+    				<li><img src="images2/pic7.png" alt="pic" />
+    					<div>
+    						<p class="p1">04</p>
+    						<p class="p2">私人包场</p>
+    						<p class="p3">Private function</p>
+    						<p class="p3">——————————</p>
+    					</div>
+    				</li>
+    		    </ul>
+    	</div>
+    	<div class="content2 overall">
+    		<p>关于我们</p>
+    		<p class="spe1">About us</p>
+    		<h1>———</h1>
+    		<div class="us">
+    			<div class="in">
+    				<p>会展成立至今,专业从事展览工作有超过10年的经验,提供全面的各种以展览服务给客户。</p>
+    				<p>坚持创新设计以专业的经验和专属服务,为客户提供需求,传递讯息。</p>
+    				<p>无论商业空间和活动策划,我们为客户提供高效、可持续、创造性。</p>
+    				<p>策划：倾听客户的传播需求与目的，并将规划成适宜在空间中呈现的设计策略。</p>
+    				<p>设计：拥有多位创意全面经验丰富的资深设计师，提供展览，活动策划，巡展，办公商业空间等全方位创意设计。</p>
+    				<p>执行：精确务实的执行力，并不断探索新的材质和施工工艺加以运用将客户的利益发挥大的效果。</p>
+    				<p>服务：专人专属的服务模式，针对个别专案采取团队服务模式，为客户提供专业细微的服务品质</p>
+    		    </div>
+    	    </div>
+    	</div>
+    	<div class="content3 overall">
+    		<p>精选案例</p>
+    		<p class="spe1">About us</p>
+    		<h1>———</h1>
+    			<ul class="images2 clear">
+    				<li><img src="images2/pic9.png" alt="pic" />
+    					<p>广州当代艺术展</p>
+    				</li>
+    				<li><img src="images2/pic10.png" alt="pic" />
+    					<p>上海古典艺术展</p>
+    				</li>
+    				<li><img src="images2/pic11.png" alt="pic" />
+    					<p>北京工业艺术展</p>
+    				</li>					
+    			</ul>
+    	</div>
+    	<div class="content4 overall">
+    		<p>新闻资讯</p>
+    		<p class="spe1">News information</p>
+    		<h1>———</h1>
+    		<ul class="top clear">
+    			<li><img src="images2/pic12.png" alt="pic" /></li>
+    			<li><img src="images2/pic13.png" alt="pic" /></li>
+    		</ul>
+            <div id="box">
+                <div id="barrage"  style='display: block;'></div>
+            </div>
+            <input id='inp' placeholder="发送新闻弹幕"/>
+            <button id="hide">隐藏弹幕信息</button>
+    		<div class="bottom">
+    			<ul>
+    				<li class="one" id="one"><a href="#">第十二届（北京）世界科技博览会成功开幕 </a>
+    				<p>5月14日-18日，“2015中国·太原国际汽车展览会”将在山西煤炭交易中心举行，本届展会推出新车特卖、品质二手车、新能源汽车等多种车型的购车优惠政策。在车展来临之际，由车展组委会发起的... </p>
+    				</li>
+    				<hr/>
+    				<li><a href="#">第九届华中旅游博览会18日开幕 </a>
+    				<p>5月18日至20日，第八届华中旅游博览会（以下简称“华博会”）将在武汉国际博览中心开幕。宜昌以上景区和多家旅行社也将携手参会，全力推介宜昌旅游。华博会现场，参展旅行社将提供千余条价... </p>
+    				</li>
+    		    </ul>
+    		</div>
+    	</div>
+    	<div class="back">	
+    	</div>
+    	<div class="content5 overall">
+    		<ul class="design clear">
+    			<li><img src="images2/pic17.png" alt="pic" /></li>
+    			<li><h3>为厂商提供专业的展览设计</h3>
+    				<p>丰富的成功经验已经使我们在国内外市场上赢得了极高的荣誉口碑，国际先进服务水准和国内设计水平成功的为国内外众多政府机关和大型企业承建展厅和特型展台的设计、搭建。</p>
+    				<ul class="brand clear">
+    					<li><img src="images2/pic14.png" alt="pic" /></li>
+    					<li><img src="images2/pic15.png" alt="pic" /></li>
+    					<li><img src="images2/pic16.png" alt="pic" /></li>
+    				</ul>
+    			</li>
+    		</ul>
+    	</div>
+    	<div class="state">
+    		<div class="overall">
+    			<p class="name"><span>Exhibition </span> Design</p>
+    			<ul class="all clear">
+    				<li>
+    					<ul class="left">
+    						<li>首页</li>
+    						<li>业务范围</li>
+    						<li>关于我们</li>
+    						<li>精选案例</li>
+    						<li>新闻资讯</li>
+    						<li>联系我们</li>
+    					</ul>
+    				</li>
+    				<li>
+    					<ul class="right">			
+    						<li>电话：000-000000</li>
+    						<li>邮箱：xxx@.com</li>
+    						<li>地址：XXX省XXX市XXX县XXX路XXX号</li>
+    					</ul>
+    				</li>
+    			</ul>
+    			<p class="last">©2014 - 2020  版权所有 许可证号：沪ICP备xxxxxxxx号-xx</p>
+    	    </div>
+    	</div>
+    </div>
+    <div id="reg1" >
+            <form class="form2 clear">
+                <p>
+                    <input class="inp inp1" id="username" type="text" placeholder="请输入用户名" name="username" />
+                </p>
+                <p id="no1"></p>
+                <p>
+                    <input class="inp inp1" id="password" type="password" name="password" placeholder="请输入密码"/>
+                </p>
+                <p id="no2"></p>
+                <p>
+                    <input class="inp inp2" id="cancel" type="submit" value="确定"/>
+                    <input class="inp inp2" id="cancel1" type="submit" value="取消"/>
+                </p>
+            </form>
+    </div>
+    //弹出登陆注册框
+    <script>
+        var reg=document.getElementById("reg");
+        var reg1=document.getElementById("reg1");
+        var cancel=document.getElementById("cancel");
+        var cancel1=document.getElementById("cancel1");
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+               
+        reg.onclick=function(){
+            reg1.style.display="block";
+            document.getElementById('no1').innerHTML=" ";
+            document.getElementById('no2').innerHTML=" ";
+            username.value=="";
+            password.value==""
+        }
+        cancel.onclick=function(){
+            reg1.style.display="none";
+        }
+        cancel1.onclick=function(){
+            reg1.style.display="none";
+        }
+        username.onblur=function(){
+            if(username.value==""){
+                document.getElementById('no1').innerHTML="用户名不能为空";
+            }
+            else{
+                document.getElementById('no1').innerHTML=" ";
+            }
+        }
+        password.onfocus=function(){
+            document.getElementById('no2').innerHTML="建议至少使用两种字符组合";
+        }
+        password.onblur=function(){
+            if(password.value==""){
+                document.getElementById('no2').innerHTML="密码不能为空";
+            }
+            else{
+                document.getElementById('no2').innerHTML=" ";
+            }
+        }
+    </script>
+
+    //点击跳转百度三秒后跳转到百度首页，在这三秒内点击停止则不会跳转到百度首页
+    <script>       
+        var baidu=document.getElementById("baidu");
+        var stop=document.getElementById("stop");
+        var openBaidu;
+        baidu.onclick=function openNew(){ 
+            openBaidu = setTimeout(function (){
+                window.open('http://www.baidu.com','baidu','width=500,height=500')
+            },3000)
+        }
+        stop.onclick=function stop(){
+            clearTimeout(openBaidu)
+        }
+    </script>
+
+
+    //点击banner图实现切换效果
+    <script>
+        var banner=document.getElementById("banner");
+        var banner1=document.getElementById("banner1");
+
+        banner.onclick=function(){
+            banner.style.display="none";
+            banner1.style.display="block";
+        }
+        banner1.onclick=function(){
+            banner.style.display="block";
+            banner1.style.display="none";
+        }
+    </script>
+
+
+
+    //实现图片上划过新闻弹幕效果
+    <script>
+        var barrage=document.getElementById('barrage');
+        var inp=document.getElementById('inp');
+        var hide=document.getElementById('hide')
+        hide.onclick=function(){
+            if(box.style.display == 'none'){
+                box.style.display = 'block'
+            }else{
+                box.style.display = 'none';
+            }
+        }
+        inp.onkeypress=function(e){
+            if(e.keyCode==13){
+                var span=document.createElement('span');
+                span.innerHTML=this.value;
+                span.style.left='800px';
+                span.style.top=Math.random()*240+'px';
+                var m = "#";
+                var str = '0123456789abcdef';
+                for(var i=0; i<6; i++){
+                   var index = parseInt(Math.random()*16);
+                   m += str[index];
+                }
+                span.style.color=m;
+            
+                var timer=setInterval(function(){
+                    span.style.left=parseInt(span.style.left)-1+'px';
+                    if(parseInt(span.style.left)<-span.offsetWidth){
+                        box.removeChild(span);
+                        clearInterval(timer);
+                    }
+                },10)
+                barrage.appendChild(span);
+            }
+        }
+    </script>
+</body>
+</html>
